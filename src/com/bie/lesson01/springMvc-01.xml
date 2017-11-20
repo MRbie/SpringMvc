@@ -27,6 +27,8 @@
     <!-- 
     	视图解析器(框架) 
     		ModelAndView对象中即可以封装真实视图路径名，也可以封装视图路径的逻辑名，springMvc.xml
+    		如果Action中书写的是视图逻辑名称，那么视图解析器就必须配置。
+    		如果Action中书写的是视图真实名称，那么视图解析器就可选配置。
     -->  
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     	<property name="prefix" value="/jsp/"/>
