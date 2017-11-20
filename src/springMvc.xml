@@ -12,8 +12,9 @@
       ">
 	
 	<!-- 总文件包含分文件 -->
-	<import resource="com/bie/lesson01/springMvc-01.xml"/>
+	<!-- <import resource="com/bie/lesson01/springMvc-01.xml"/> -->
 	
+	<import resource="com/bie/lesson02/springMvc-02.xml"/>
      	
 </beans>      
 
