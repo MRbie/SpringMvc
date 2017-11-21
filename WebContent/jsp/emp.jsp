@@ -17,9 +17,9 @@
 <a href="${pageContext.request.contextPath }/add.action" class="no_underline">增加员工</a><br/>
 
 
-<a href="" class="no_underline">删除员工</a><br/>
-<a href="" class="no_underline">修改员工</a><br/>
-<a href="" class="no_underline">查询员工</a><br/>
+<a href="${pageContext.request.contextPath }/delete.action" class="no_underline">删除员工</a><br/>
+<a href="${pageContext.request.contextPath }/update.action" class="no_underline">修改员工</a><br/>
+<a href="${pageContext.request.contextPath }/select.action" class="no_underline">查询员工</a><br/>
 
 
 

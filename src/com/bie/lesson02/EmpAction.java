@@ -20,7 +20,8 @@ public class EmpAction implements Controller{
 		////ModelAndView表示向视图封装的数据和路径。
 		ModelAndView mav = new ModelAndView();
 		//封装数据
-		mav.addObject("message", "用户增加成功.....");
+		//mav.addObject("message", "用户增加成功.....");
+		mav.addObject("message", "用户操作成功.....");
 		//封装路径
 		mav.setViewName("success");
 		//返回

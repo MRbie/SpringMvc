@@ -21,7 +21,47 @@
 	 -->      
 	<!-- <bean name="/hello.action" class="com.bie.lesson01.HelloAction"></bean> -->
     <!-- 配置了前置和后置名称 -->
-    <bean name="/add.action" class="com.bie.lesson02.EmpAction"></bean>
+    <!-- 
+    	第一种:
+    	映射器,注册控制器(程序员)
+    	1)org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping(核心)
+			将程序员定义的Action所对应的<bean>标签的name属性作为请求路径
+     -->
+    <!-- 
+    	<bean name="/add.action" class="com.bie.lesson02.EmpAction"></bean>
+	    <bean name="/delete.action" class="com.bie.lesson02.EmpAction"></bean>
+	    <bean name="/update.action" class="com.bie.lesson02.EmpAction"></bean>
+	    <bean name="/select.action" class="com.bie.lesson02.EmpAction"></bean> 
+	-->
+    
+    <!-- 
+    	第二种:
+    	2)org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
+			/delete.action和/update.action和/find.action请求路径都交由<bean>标签为id的Action，即
+			多个路径对应同一个Action 
+     -->
+     <!-- 注册控制器(程序员) -->
+     <bean id="EmpActionId" class="com.bie.lesson02.EmpAction"></bean>
+	 <!-- 
+	 	注册映射器(handler包)(框架) 
+	 		适合于将多个请求，映射到同一个Action中
+	 -->
+	  <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">   
+     	<property name="mappings">
+     		<props>
+     			<!-- key表示请求路径 -->
+     			<prop key="/add.action">EmpActionId</prop>
+     			<prop key="/delete.action">EmpActionId</prop>
+     			<prop key="/update.action">EmpActionId</prop>
+     			<prop key="/select.action">EmpActionId</prop>
+     			
+     		</props>
+     		
+     	</property>
+      </bean>	
+    
+    
+    
     
       
     <!-- 
@@ -35,6 +75,10 @@
     	<property name="suffix" value=".jsp"/>
     </bean> 
       
+      	
+      	
+      	
+      	
       	
     <!-- 
     	映射器(框架),可省略。handler
