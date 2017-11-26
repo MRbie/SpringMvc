@@ -16,8 +16,9 @@
 	
 	<!-- <import resource="com/bie/lesson02/springMvc-02.xml"/> -->
      	
-    <import resource="com/bie/lesson03/springMvc-03.xml"/>	
+    <!-- <import resource="com/bie/lesson03/springMvc-03.xml"/> -->	
      	
+    <import resource="com/bie/lesson04/springMvc-04.xml"/> 	
 </beans>      
 
 
